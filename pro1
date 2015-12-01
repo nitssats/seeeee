@@ -1,0 +1,41 @@
+package seproject;
+
+public class junit{
+	
+int marks_aquired(String usn , String name , int n ,int internal[], int extra[])
+{
+int  total=0;
+int total1=0;
+for(int i=0;i<n;i++)
+{
+total+=internal[i];
+}
+
+// sorting ..
+for(int i=0 ;i<n;i++)
+{
+	for(int j=i+1;j<n;j++)
+	{
+		if(internal[j]>internal[i])
+		{
+			int temp = internal[j];
+			internal[j]=internal[i];
+			internal[i]=temp;
+		}
+	}
+}
+
+
+if(n<2)
+{
+int y = 2-n;
+for(int i=0;i<y;i++)
+total1+=extra[i];
+for(int i=0;i<n;i++)
+total1+=internal[i];
+return total1/2;
+}
+else
+return (internal[1]+internal[2])/2;
+}
+}
